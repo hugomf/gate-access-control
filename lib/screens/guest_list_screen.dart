@@ -6,11 +6,13 @@ import 'package:http/http.dart' as http;
 import 'package:qr_flutter/qr_flutter.dart';
 
 class GuestListScreen extends StatefulWidget {
+  const GuestListScreen({super.key});
+
   @override
-  _GuestListScreenState createState() => _GuestListScreenState();
+  GuestListScreenState createState() => GuestListScreenState();
 }
 
-class _GuestListScreenState extends State<GuestListScreen> {
+class GuestListScreenState extends State<GuestListScreen> {
   List<dynamic> _guests = [];
   bool _isLoading = true;
   bool _hasError = false;
@@ -96,8 +98,8 @@ class _GuestListScreenState extends State<GuestListScreen> {
             ),
           );
         },
-        child: Icon(Icons.add),
         tooltip: 'Add Guest',
+        child: Icon(Icons.add),
       ),
     );
   }

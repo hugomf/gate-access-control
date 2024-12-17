@@ -10,7 +10,7 @@ class GuestEditScreen extends StatefulWidget {
   final String currentReason;
   final Function fetchGuestsCallback;
 
-  GuestEditScreen({
+  const GuestEditScreen({super.key, 
     required this.guestId,
     required this.currentName,
     required this.currentPhone,
@@ -20,10 +20,10 @@ class GuestEditScreen extends StatefulWidget {
   });
 
   @override
-  _GuestEditScreenState createState() => _GuestEditScreenState();
+  GuestEditScreenState createState() => GuestEditScreenState();
 }
 
-class _GuestEditScreenState extends State<GuestEditScreen> {
+class GuestEditScreenState extends State<GuestEditScreen> {
   final _nameController = TextEditingController();
   final _phoneController = TextEditingController();
   final _emailController = TextEditingController();

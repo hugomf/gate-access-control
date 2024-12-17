@@ -4,20 +4,22 @@ import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:http/http.dart' as http;
 
 class QrScannerScreen extends StatefulWidget {
+  const QrScannerScreen({super.key});
+
   @override
-  _QrScannerScreenState createState() => _QrScannerScreenState();
+  QrScannerScreenState createState() => QrScannerScreenState();
 }
 
-class _QrScannerScreenState extends State<QrScannerScreen> {
+class QrScannerScreenState extends State<QrScannerScreen> {
   
   
   final GlobalKey _qrKey = GlobalKey(debugLabel: 'QR');
   
   String _qrResult = "Scan a QR code";
-  bool _isScanning = true;
+  final bool _isScanning = true;
 
   // This will hold scanned QR code data for future reference (local storage or database)
-  List<String> _scannedData = [];
+  final List<String> _scannedData = [];
 
   // API URL for saving QR data to a backend (adjust with your actual backend)
   final String apiUrl = 'https://your-api-url.com/scan-records';
@@ -101,7 +103,7 @@ class _QrScannerScreenState extends State<QrScannerScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text("Previously Scanned QR Codes:", style: TextStyle(fontSize: 16)),
-                ..._scannedData.map((data) => Text(data)).toList(),
+                ..._scannedData.map((data) => Text(data)),
               ],
             ),
           ),

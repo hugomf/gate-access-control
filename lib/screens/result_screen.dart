@@ -10,8 +10,8 @@ class ResultScreen extends StatefulWidget {
 
   ResultScreen({
     required String code,
-    Key? key,
-  }) : super(key: key) {
+    super.key,
+  }) {
     final json = jsonDecode(code);
     question = json['question'];
     answer = json['answer'];
@@ -19,10 +19,10 @@ class ResultScreen extends StatefulWidget {
   }
 
   @override
-  _ResultScreenState createState() => _ResultScreenState();
+  ResultScreenState createState() => ResultScreenState();
 }
 
-class _ResultScreenState extends State<ResultScreen> {
+class ResultScreenState extends State<ResultScreen> {
   var _answeredCorrect = false;
 
   @override

@@ -6,14 +6,14 @@ import 'package:qr_flutter/qr_flutter.dart';
 class GuestRegistrationScreen extends StatefulWidget {
   final Function fetchGuestsCallback;
 
-  GuestRegistrationScreen({required this.fetchGuestsCallback});
+  const GuestRegistrationScreen({super.key, required this.fetchGuestsCallback});
 
   @override
-  _GuestRegistrationScreenState createState() =>
-      _GuestRegistrationScreenState();
+  GuestRegistrationScreenState createState() =>
+      GuestRegistrationScreenState();
 }
 
-class _GuestRegistrationScreenState extends State<GuestRegistrationScreen> {
+class GuestRegistrationScreenState extends State<GuestRegistrationScreen> {
   final _emailController = TextEditingController();
   final _nameController = TextEditingController();
   final _phoneController = TextEditingController();
