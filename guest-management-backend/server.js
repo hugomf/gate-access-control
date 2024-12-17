@@ -23,9 +23,21 @@ const guestSchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now },
 });
 
-const Guest = mongoose.model('Guest', guestSchema);
+const accessSchema = new mongoose.Schema({
+  data: String,
+  accessedAt: { type: Date, default: Date.now }
+});
 
+const Guest = mongoose.model('Guest', guestSchema);
+const Access = mongoose.model('Access', accessSchema);
 // Routes
+app.post('/api/access', async (req, res) => {
+  const { data } = req.body;
+  const access = new Access({ data });
+  await access.save();
+  res.status(201).send(access);
+});
+
 app.post('/api/guests', async (req, res) => {
   const { email, name, phone, reason } = req.body;
   const guest = new Guest({ email, name, phone, reason });
