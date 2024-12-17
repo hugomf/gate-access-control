@@ -11,14 +11,14 @@ The **Access Control** app is a Flutter-based mobile application designed to man
 
 ## Screens
 
-1. **Home Screen**: 
-   - A welcome message and two main navigation options: 
+1. **Home Screen**:
+   - A welcome message and two main navigation options:
      - **Guest List**: Navigate to a list of guests.
      - **Scan QR**: Navigate to a screen where QR codes can be scanned.
-   
+
 2. **Guest List Screen**:
    - Displays the list of registered guests.
-   
+
 3. **QR Scanner Screen**:
    - A screen to scan QR codes and handle visitor verification.
 
@@ -31,6 +31,7 @@ The **Access Control** app is a Flutter-based mobile application designed to man
 
 ### Prerequisites
 
+- Install NodeJS
 - Install [Flutter](https://flutter.dev/docs/get-started/install).
 - Set up an emulator or connect a physical device.
 
@@ -40,4 +41,23 @@ The **Access Control** app is a Flutter-based mobile application designed to man
 
    ```bash
       git clone [Gate Access Control Git](https://github.com/hugomf/gate-access-control.git)
+      cd gate-access-control
     ```
+
+2. Start the backend server:
+
+   ```bash
+    node ./guest-management-backend/server.js
+   ```
+
+3. Make sure to install the dependencies
+
+   ```bash
+   flutter pub get
+   ```
+
+4. Run in chrome (for testing)
+
+  ```bash
+   flutter run -d chrome
+   ```
