@@ -37,5 +37,7 @@ The **Access Control** app is a Flutter-based mobile application designed to man
 ### Getting Started
 
 1. Clone this repository:
+
    ```bash
-   git clone <repository_url>
+      git clone [Gate Access Control Git](https://github.com/hugomf/gate-access-control.git)
+    ```
