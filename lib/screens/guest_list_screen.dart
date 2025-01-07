@@ -44,6 +44,7 @@ class GuestListScreenState extends State<GuestListScreen> {
         _hasError = true;
         _isLoading = false;
       });
+      print(error);
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Error fetching guests: $error')),
       );
@@ -82,7 +83,9 @@ class GuestListScreenState extends State<GuestListScreen> {
     return Scaffold(
       appBar: AppBar(title: Text('Guest List')),
       body: _isLoading
-          ? Center(child: CircularProgressIndicator()) // Show loading spinner while fetching
+          ? Center(
+              child:
+                  CircularProgressIndicator()) // Show loading spinner while fetching
           : _hasError
               ? _buildErrorState() // Show error state with retry
               : _buildGuestList(), // Show the list of guests
@@ -93,7 +96,8 @@ class GuestListScreenState extends State<GuestListScreen> {
             context,
             MaterialPageRoute(
               builder: (context) => GuestRegistrationScreen(
-                fetchGuestsCallback: fetchGuests, // Pass callback to refresh guest list
+                fetchGuestsCallback:
+                    fetchGuests, // Pass callback to refresh guest list
               ),
             ),
           );
@@ -117,7 +121,8 @@ class GuestListScreenState extends State<GuestListScreen> {
             size: 50.0,
           ),
           title: Text(guest['name']),
-          subtitle: Text('Phone: ${guest['phone']}\nRegistered on: ${guest['createdAt']}'),
+          subtitle: Text(
+              'Phone: ${guest['phone']}\nRegistered on: ${guest['createdAt']}'),
           isThreeLine: true,
           trailing: Row(
             mainAxisSize: MainAxisSize.min,
@@ -129,7 +134,7 @@ class GuestListScreenState extends State<GuestListScreen> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                     builder: (context) => GuestEditScreen(
+                      builder: (context) => GuestEditScreen(
                         guestId: guest["_id"],
                         currentName: guest["name"] ?? '',
                         currentPhone: guest["phone"] ?? '',
